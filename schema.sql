@@ -1,0 +1,12 @@
+-- MySQL schema
+CREATE TABLE IF NOT EXISTS files (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  description TEXT NULL,
+  filename VARCHAR(255) NOT NULL, -- stored filename
+  original_name VARCHAR(255) NOT NULL,
+  mime_type VARCHAR(190) NOT NULL,
+  size_bytes BIGINT NOT NULL,
+  is_public TINYINT(1) NOT NULL DEFAULT 1,
+  uploaded_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
